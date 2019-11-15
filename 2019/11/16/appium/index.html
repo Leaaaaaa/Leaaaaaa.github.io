@@ -50,18 +50,17 @@
   };
 </script>
 
-  <meta name="description" content="##有关adb的相关命令：1、启动adb服务 adb start-server 2、终止adb服务 adb kill-server 3、进入adb运行环境 adb shell 4、获取帮助 里面有adb的各种命令和参数的介绍 adb help 5、查看adb版本 adb version6、以root权限重启adb adb root 7、将system分区重新挂在为可读写分区，此命令在操作系统目录时">
-<meta name="keywords" content="adb">
+  <meta name="description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
 <meta property="og:type" content="article">
-<meta property="og:title" content="adb命令">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;adb&#x2F;index.html">
+<meta property="og:title" content="appium">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;appium&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="##有关adb的相关命令：1、启动adb服务 adb start-server 2、终止adb服务 adb kill-server 3、进入adb运行环境 adb shell 4、获取帮助 里面有adb的各种命令和参数的介绍 adb help 5、查看adb版本 adb version6、以root权限重启adb adb root 7、将system分区重新挂在为可读写分区，此命令在操作系统目录时">
+<meta property="og:description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T17:04:43.007Z">
+<meta property="og:updated_time" content="2019-11-15T17:07:49.190Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/16/adb/">
+<link rel="canonical" href="http://yoursite.com/2019/11/16/appium/">
 
 
 <script id="page-configurations">
@@ -75,7 +74,7 @@
   };
 </script>
 
-  <title>adb命令 | Lea的博客</title>
+  <title>appium | Lea的博客</title>
   
 
 
@@ -190,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/adb/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/appium/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          adb命令
+          appium
         </h1>
 
         <div class="post-meta">
@@ -214,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-16 00:00:00 / 修改时间：01:04:43" itemprop="dateCreated datePublished" datetime="2019-11-16T00:00:00+08:00">2019-11-16</time>
+              <time title="创建时间：2019-11-16 01:07:06 / 修改时间：01:07:49" itemprop="dateCreated datePublished" datetime="2019-11-16T01:07:06+08:00">2019-11-16</time>
             </span>
 
           
@@ -228,40 +227,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>##有关adb的相关命令：<br>1、启动adb服务</p>
-<p>adb start-server</p>
-<p>2、终止adb服务</p>
-<p>adb kill-server</p>
-<p>3、进入adb运行环境</p>
-<p>adb shell</p>
-<p>4、获取帮助 里面有adb的各种命令和参数的介绍</p>
-<p>adb help</p>
-<p>5、查看adb版本</p>
-<p>adb version<br>6、以root权限重启adb</p>
-<p>adb root</p>
-<p>7、将system分区重新挂在为可读写分区，此命令在操作系统目录时很重要</p>
-<p>adb remount</p>
-<p>8、重启设备,可选参数进入bootloader(刷机模式)或recovery(恢复模式)</p>
-<p>adb reboot [bootloader|recovery]</p>
-<p>apk相关:</p>
-<p>1、安装apk</p>
-<p>adb install test.apk -r 覆盖安装，保留数据和缓存文件  -d 解决低版本version问题  -s 安装apk到sd卡</p>
-<p>2、卸载apk</p>
-<p>adb uninstall -k <package_name></p>
-<p>可选参数-k的作用为卸载软件但是保留配置和缓存文件</p>
-<p>3、查看app相关所有信息，包括action,codepath,version,需要的权限等等信息</p>
-<p>adb shell dumpsys package <package_name></p>
-<p>4、查看app的路径</p>
-<p>adb shell pm path <package_name></p>
-<p>package:/data/app/com.tencent.test-1/base.apk</p>
-<p>5、查看apk的版本信息</p>
-<p>adb shell dumpsys package <package_name> | grepversion</p>
-<p>6、查看某个app进程的相关信息</p>
-<p>adb shell ps &lt;package_name|PID&gt;</p>
-<p>7、杀掉某个进程，一般用于模拟某个bug复现</p>
-<p>adb shell kill pid Number</p>
-<p>8、查看某一个app的内存占用</p>
-<p>adb shell dumpsys meminfo &lt;package_name|PID&gt;</p>
+        <p>##有关appium的学习笔记<br>###基本信息配置<br><em># 导入appium库</em></p>
+<blockquote>
+<p>from appium import webdriver</p>
+</blockquote>
+<p><em># 创建字典</em></p>
+<blockquote>
+<p>desired_caps= dict()</p>
+</blockquote>
+<p><em># 设备类型</em></p>
+<blockquote>
+<p>desired_caps[‘platformName’] = ‘Android’</p>
+</blockquote>
+<p><em># 设备版本</em></p>
+<blockquote>
+<p>desired_caps[‘platformVersion’] = ‘6.0.1’</p>
+</blockquote>
+<p><em># 安卓随意写，苹果按手机型号写，如iPhone6</em></p>
+<blockquote>
+<p>desired_caps[‘deviceName’] = ‘test’</p>
+</blockquote>
+<p><em># app的包名</em></p>
+<blockquote>
+<p>desired_caps[‘appPackage’] = ‘com.android.settings’</p>
+</blockquote>
+<p><em># app的启动名（界面名</em></p>
+<blockquote>
+<p>desired_caps[‘appActivity’] = ‘.SubSettings’</p>
+</blockquote>
+<p><em># 创建一个driver对象 我们写的Python代码会访问本机的appium服务器，并获取driver对象。appium会将我们的driver对象调用方法转化为post请求，提交给appium服务器。appium通过接受到的post请求发送给手机（虚拟器），再由手机执行</em></p>
+<blockquote>
+<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps）</p>
+</blockquote>
+<ul>
+<li>获取APP启动时间</li>
+</ul>
+<blockquote>
+<p>adb shell am start -W +包名/启动名（打开一个应用程序并返回时间）</p>
+</blockquote>
+<blockquote>
+<p>Thistime：该界面（activity)启动的耗时时间</p>
+</blockquote>
+<blockquote>
+<p>totaltime：应用自身启动耗时=thistime+应用application等待资源启动时间</p>
+</blockquote>
+<blockquote>
+<p>Waittime：系统启动应用耗时=totaltime+系统资源启动时间</p>
+</blockquote>
+<ul>
+<li>如何使用appium打开任意app</li>
+</ul>
+<blockquote>
+<p>1.打开要测试的应用</p>
+</blockquote>
+<blockquote>
+<p>2.使用adb命令获取包名和启动名</p>
+</blockquote>
+<blockquote>
+<p>3.修改desired_caps字典中的appPackage和appActivity的参数</p>
+</blockquote>
+<ul>
+<li>在一个应用内跳转到另一个应用</li>
+</ul>
+<blockquote>
+<p>driver.start_activity(“包名”, “启动名”)</p>
+</blockquote>
+<ul>
+<li>在跳转时，想要输出其包名或启动名,或者想要在报告中展示对应的信息</li>
+</ul>
+<blockquote>
+<p>driver.current_package</p>
+</blockquote>
+<blockquote>
+<p>driver.current_activity</p>
+</blockquote>
 
     </div>
 
@@ -270,25 +309,19 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/adb/" rel="tag"># adb</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/01/charles/" rel="next" title="charles">
-                  <i class="fa fa-chevron-left"></i> charles
+                <a href="/2019/11/16/adb/" rel="next" title="adb命令">
+                  <i class="fa fa-chevron-left"></i> adb命令
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/16/appium/" rel="prev" title="appium">
-                  appium <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
