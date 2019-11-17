@@ -50,17 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="一个小菜鸡的修炼心得与踩坑之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;index.html">
+  <meta name="description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
+<meta name="keywords" content="appium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="appium">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;appium0&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="一个小菜鸡的修炼心得与踩坑之路">
+<meta property="og:description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T03:25:38.375Z">
+<meta property="og:updated_time" content="2019-11-15T17:09:44.072Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/categories/">
+<link rel="canonical" href="http://yoursite.com/2019/11/16/appium0/">
 
 
 <script id="page-configurations">
@@ -68,14 +69,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>categories | Lea的博客
-  </title>
+  <title>appium | Lea的博客</title>
   
 
 
@@ -181,52 +181,163 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/appium0/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          appium
+        </h1>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              暂无分类
-            </div>
-            <div class="category-all">
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
               
+
+              <time title="创建时间：2019-11-16 01:07:06 / 修改时间：01:09:44" itemprop="dateCreated datePublished" datetime="2019-11-16T01:07:06+08:00">2019-11-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>##有关appium的学习笔记<br>###基本信息配置<br><em># 导入appium库</em></p>
+<blockquote>
+<p>from appium import webdriver</p>
+</blockquote>
+<p><em># 创建字典</em></p>
+<blockquote>
+<p>desired_caps= dict()</p>
+</blockquote>
+<p><em># 设备类型</em></p>
+<blockquote>
+<p>desired_caps[‘platformName’] = ‘Android’</p>
+</blockquote>
+<p><em># 设备版本</em></p>
+<blockquote>
+<p>desired_caps[‘platformVersion’] = ‘6.0.1’</p>
+</blockquote>
+<p><em># 安卓随意写，苹果按手机型号写，如iPhone6</em></p>
+<blockquote>
+<p>desired_caps[‘deviceName’] = ‘test’</p>
+</blockquote>
+<p><em># app的包名</em></p>
+<blockquote>
+<p>desired_caps[‘appPackage’] = ‘com.android.settings’</p>
+</blockquote>
+<p><em># app的启动名（界面名</em></p>
+<blockquote>
+<p>desired_caps[‘appActivity’] = ‘.SubSettings’</p>
+</blockquote>
+<p><em># 创建一个driver对象 我们写的Python代码会访问本机的appium服务器，并获取driver对象。appium会将我们的driver对象调用方法转化为post请求，提交给appium服务器。appium通过接受到的post请求发送给手机（虚拟器），再由手机执行</em></p>
+<blockquote>
+<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps）</p>
+</blockquote>
+<ul>
+<li>获取APP启动时间</li>
+</ul>
+<blockquote>
+<p>adb shell am start -W +包名/启动名（打开一个应用程序并返回时间）</p>
+</blockquote>
+<blockquote>
+<p>Thistime：该界面（activity)启动的耗时时间</p>
+</blockquote>
+<blockquote>
+<p>totaltime：应用自身启动耗时=thistime+应用application等待资源启动时间</p>
+</blockquote>
+<blockquote>
+<p>Waittime：系统启动应用耗时=totaltime+系统资源启动时间</p>
+</blockquote>
+<ul>
+<li>如何使用appium打开任意app</li>
+</ul>
+<blockquote>
+<p>1.打开要测试的应用</p>
+</blockquote>
+<blockquote>
+<p>2.使用adb命令获取包名和启动名</p>
+</blockquote>
+<blockquote>
+<p>3.修改desired_caps字典中的appPackage和appActivity的参数</p>
+</blockquote>
+<ul>
+<li>在一个应用内跳转到另一个应用</li>
+</ul>
+<blockquote>
+<p>driver.start_activity(“包名”, “启动名”)</p>
+</blockquote>
+<ul>
+<li>在跳转时，想要输出其包名或启动名,或者想要在报告中展示对应的信息</li>
+</ul>
+<blockquote>
+<p>driver.current_package</p>
+</blockquote>
+<blockquote>
+<p>driver.current_activity</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/appium/" rel="tag"># appium</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/16/adb/" rel="next" title="adb命令">
+                  <i class="fa fa-chevron-left"></i> adb命令
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/17/%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85/" rel="prev" title="元素等待">
+                  元素等待 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
+      </footer>
     
+  </article>
+  
+  
+  
 
-    
-    
-    
   </div>
 
 

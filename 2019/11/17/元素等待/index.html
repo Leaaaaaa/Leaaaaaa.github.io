@@ -50,18 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
+  <meta name="description" content="元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位  1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待   隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常步骤：在获取driver对象后，调用implicitly_wait（）方法即可作用:">
 <meta name="keywords" content="appium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="appium">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;appium&#x2F;index.html">
+<meta property="og:title" content="元素等待">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="##有关appium的学习笔记###基本信息配置# 导入appium库  from appium import webdriver  # 创建字典  desired_caps= dict()  # 设备类型  desired_caps[‘platformName’] = ‘Android’  # 设备版本  desired_caps[‘platformVersion’] = ‘6.0.1’  #">
+<meta property="og:description" content="元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位  1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待   隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常步骤：在获取driver对象后，调用implicitly_wait（）方法即可作用:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T17:09:44.072Z">
+<meta property="og:updated_time" content="2019-11-17T16:00:52.219Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/16/appium/">
+<link rel="canonical" href="http://yoursite.com/2019/11/17/%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85/">
 
 
 <script id="page-configurations">
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title>appium | Lea的博客</title>
+  <title>元素等待 | Lea的博客</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/appium/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          appium
+          元素等待
         </h1>
 
         <div class="post-meta">
@@ -212,10 +212,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-16 01:07:06 / 修改时间：01:09:44" itemprop="dateCreated datePublished" datetime="2019-11-16T01:07:06+08:00">2019-11-16</time>
+              <time title="创建时间：2019-11-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-17T00:00:00+08:00">2019-11-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-18 00:00:52" itemprop="dateModified" datetime="2019-11-18T00:00:52+08:00">2019-11-18</time>
+              </span>
 
           
 
@@ -228,80 +234,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>##有关appium的学习笔记<br>###基本信息配置<br><em># 导入appium库</em></p>
-<blockquote>
-<p>from appium import webdriver</p>
-</blockquote>
-<p><em># 创建字典</em></p>
-<blockquote>
-<p>desired_caps= dict()</p>
-</blockquote>
-<p><em># 设备类型</em></p>
-<blockquote>
-<p>desired_caps[‘platformName’] = ‘Android’</p>
-</blockquote>
-<p><em># 设备版本</em></p>
-<blockquote>
-<p>desired_caps[‘platformVersion’] = ‘6.0.1’</p>
-</blockquote>
-<p><em># 安卓随意写，苹果按手机型号写，如iPhone6</em></p>
-<blockquote>
-<p>desired_caps[‘deviceName’] = ‘test’</p>
-</blockquote>
-<p><em># app的包名</em></p>
-<blockquote>
-<p>desired_caps[‘appPackage’] = ‘com.android.settings’</p>
-</blockquote>
-<p><em># app的启动名（界面名</em></p>
-<blockquote>
-<p>desired_caps[‘appActivity’] = ‘.SubSettings’</p>
-</blockquote>
-<p><em># 创建一个driver对象 我们写的Python代码会访问本机的appium服务器，并获取driver对象。appium会将我们的driver对象调用方法转化为post请求，提交给appium服务器。appium通过接受到的post请求发送给手机（虚拟器），再由手机执行</em></p>
-<blockquote>
-<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps）</p>
-</blockquote>
-<ul>
-<li>获取APP启动时间</li>
+        <ul>
+<li>元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位</li>
 </ul>
-<blockquote>
-<p>adb shell am start -W +包名/启动名（打开一个应用程序并返回时间）</p>
-</blockquote>
-<blockquote>
-<p>Thistime：该界面（activity)启动的耗时时间</p>
-</blockquote>
-<blockquote>
-<p>totaltime：应用自身启动耗时=thistime+应用application等待资源启动时间</p>
-</blockquote>
-<blockquote>
-<p>Waittime：系统启动应用耗时=totaltime+系统资源启动时间</p>
-</blockquote>
+<p>1.由于网络原因<br>2.服务器处理原因<br>3.电脑配置原因<br>元素等待类型：显示等待，隐式等待</p>
+<hr>
 <ul>
-<li>如何使用appium打开任意app</li>
+<li><p>隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常<br>步骤：在获取driver对象后，调用implicitly_wait（）方法即可<br>作用:在设置了超时时间之后，后续所有的定位元素的方法都会在这个时间内等待元素出现，如果出现了，直接进行后续操作，如果没有出现，报错，NoSuchElementException</p>
+</li>
+<li><p>显示等待：针对所有定位的超时时间设置为不同的值的时候，在一段时间内不同的时间间隔内多次尝试定位元素<br>步骤：1.导包 2.创建webdriverwait对象3.调用webdriverwait对象的until方法<br>作用：在设置了显示等待之后，可以等待一个超时时间，在这个超时时间内进行查找，默认每0.5秒照一次，频率也可以自己设置，一旦找到这个元素，直接进行后续操作，如果没有找到，报错。TimeOutException</p>
+</li>
+<li><p>两个等待的选择：<br>作用域：显示等待为单个元素有效，隐式等待为全局元素<br>方法：显示等待方法封装在webdriverwait中，饮食等待直接通过driver实例化对象调用<br>关于sleep形式：sleep是一个固定死一个时间<br>而元素等待是可以让元素出来的第一时间进行操作，sleep可能造成不必要的浪费</p>
+</li>
 </ul>
-<blockquote>
-<p>1.打开要测试的应用</p>
-</blockquote>
-<blockquote>
-<p>2.使用adb命令获取包名和启动名</p>
-</blockquote>
-<blockquote>
-<p>3.修改desired_caps字典中的appPackage和appActivity的参数</p>
-</blockquote>
-<ul>
-<li>在一个应用内跳转到另一个应用</li>
-</ul>
-<blockquote>
-<p>driver.start_activity(“包名”, “启动名”)</p>
-</blockquote>
-<ul>
-<li>在跳转时，想要输出其包名或启动名,或者想要在报告中展示对应的信息</li>
-</ul>
-<blockquote>
-<p>driver.current_package</p>
-</blockquote>
-<blockquote>
-<p>driver.current_activity</p>
-</blockquote>
 
     </div>
 
@@ -318,14 +263,17 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/16/adb/" rel="next" title="adb命令">
-                  <i class="fa fa-chevron-left"></i> adb命令
+                <a href="/2019/11/16/appium0/" rel="next" title="appium">
+                  <i class="fa fa-chevron-left"></i> appium
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/17/appium1/" rel="prev" title="appium1">
+                  appium1 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -379,14 +327,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
