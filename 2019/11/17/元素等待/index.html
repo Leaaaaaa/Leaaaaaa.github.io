@@ -50,15 +50,15 @@
   };
 </script>
 
-  <meta name="description" content="元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位  1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待   隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常步骤：在获取driver对象后，调用implicitly_wait（）方法即可作用:">
+  <meta name="description" content="元素等待：   由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待    隐式等待：  等待元素加载指定的市场，超出市场抛出NoSuchElementException异常 步骤：在获取driver对象后，调用implicitly_wait（）方法">
 <meta name="keywords" content="appium">
 <meta property="og:type" content="article">
 <meta property="og:title" content="元素等待">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位  1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待   隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常步骤：在获取driver对象后，调用implicitly_wait（）方法即可作用:">
+<meta property="og:description" content="元素等待：   由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位1.由于网络原因2.服务器处理原因3.电脑配置原因元素等待类型：显示等待，隐式等待    隐式等待：  等待元素加载指定的市场，超出市场抛出NoSuchElementException异常 步骤：在获取driver对象后，调用implicitly_wait（）方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T16:00:52.219Z">
+<meta property="og:updated_time" content="2019-11-20T08:25:15.853Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/17/%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85/">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-18 00:00:52" itemprop="dateModified" datetime="2019-11-18T00:00:52+08:00">2019-11-18</time>
+                <time title="修改时间：2019-11-20 16:25:15" itemprop="dateModified" datetime="2019-11-20T16:25:15+08:00">2019-11-20</time>
               </span>
 
           
@@ -235,17 +235,42 @@
 
       
         <ul>
-<li>元素等待：由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位</li>
+<li>元素等待：</li>
 </ul>
-<p>1.由于网络原因<br>2.服务器处理原因<br>3.电脑配置原因<br>元素等待类型：显示等待，隐式等待</p>
+<blockquote>
+<p>由于一些原因我们要定位的元素没有立刻出来，此时定位元素会报错，所以设置一个时间，等待元素师，等待元素出来之后在进行定位<br>1.由于网络原因<br>2.服务器处理原因<br>3.电脑配置原因<br>元素等待类型：显示等待，隐式等待</p>
+</blockquote>
 <hr>
 <ul>
-<li><p>隐式等待：等待元素加载指定的市场，超出市场抛出NoSuchElementException异常<br>步骤：在获取driver对象后，调用implicitly_wait（）方法即可<br>作用:在设置了超时时间之后，后续所有的定位元素的方法都会在这个时间内等待元素出现，如果出现了，直接进行后续操作，如果没有出现，报错，NoSuchElementException</p>
+<li><p>隐式等待：</p>
+<blockquote>
+<p>等待元素加载指定的市场，超出市场抛出NoSuchElementException异常</p>
+<p>步骤：在获取driver对象后，调用implicitly_wait（）方法即可</p>
+<p>例如：driver.implicitly_wait(5)</p>
+<p>driver.find_element_by_…().click()</p>
+<p>作用:在设置了超时时间之后，后续所有的定位元素的方法都会在这个时间内等待元素出现，如果出现了，直接进行后续操作，如果没有出现，报错，NoSuchElementException</p>
+</blockquote>
 </li>
-<li><p>显示等待：针对所有定位的超时时间设置为不同的值的时候，在一段时间内不同的时间间隔内多次尝试定位元素<br>步骤：1.导包 2.创建webdriverwait对象3.调用webdriverwait对象的until方法<br>作用：在设置了显示等待之后，可以等待一个超时时间，在这个超时时间内进行查找，默认每0.5秒照一次，频率也可以自己设置，一旦找到这个元素，直接进行后续操作，如果没有找到，报错。TimeOutException</p>
+<li><p>显示等待：</p>
+<blockquote>
+<p>针对所有定位的超时时间设置为不同的值的时候，在一段时间内不同的时间间隔内多次尝试定位元素<br>步骤：</p>
+</blockquote>
 </li>
-<li><p>两个等待的选择：<br>作用域：显示等待为单个元素有效，隐式等待为全局元素<br>方法：显示等待方法封装在webdriverwait中，饮食等待直接通过driver实例化对象调用<br>关于sleep形式：sleep是一个固定死一个时间<br>而元素等待是可以让元素出来的第一时间进行操作，sleep可能造成不必要的浪费</p>
+</ul>
+<blockquote>
+<ol>
+<li><p>导包 from selenium.webdriver.support.wait import WebDriverWait</p>
 </li>
+<li><p>创建webdriverwait对象</p>
+</li>
+<li><p>调用webdriverwait对象的until方法</p>
+<p>例如：wait = WebDriverWait(driver, 15).until(lambda x: x.find_element_by_xpath(“//*[@text=’发现’]”))<br>wait.click()   时间单位：秒</p>
+<p>作用：在设置了显示等待之后，可以等待一个超时时间，在这个超时时间内进行查找，默认每0.5秒照一次，频率也可以自己设置，一旦找到这个元素，直接进行后续操作，如果没有找到，报错。TimeOutException</p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>两个等待的选择：<br>作用域：显示等待为单个元素有效，隐式等待为全局元素<br>方法：显示等待方法封装在webdriverwait中，饮食等待直接通过driver实例化对象调用<br>关于sleep形式：sleep是一个固定死一个时间<br>而元素等待是可以让元素出来的第一时间进行操作，sleep可能造成不必要的浪费</li>
 </ul>
 
     </div>
@@ -327,7 +352,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

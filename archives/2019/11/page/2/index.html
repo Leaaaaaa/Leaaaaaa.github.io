@@ -50,18 +50,16 @@
   };
 </script>
 
-  <meta name="description" content="1.获取手机分辨率  driver.get_window_size()  2.手机截图  应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题 参数： filename：指定路径下，指定格式的图片 get_screenshot_as_file(filename) 例如：get_screenshot_as_file(“&#x2F;Users&#x2F;">
-<meta name="keywords" content="appium">
-<meta property="og:type" content="article">
-<meta property="og:title" content="手机API操作">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;18&#x2F;%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C&#x2F;index.html">
+  <meta name="description" content="一个小菜鸡的修炼心得与踩坑之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lea的博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;11&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="1.获取手机分辨率  driver.get_window_size()  2.手机截图  应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题 参数： filename：指定路径下，指定格式的图片 get_screenshot_as_file(filename) 例如：get_screenshot_as_file(“&#x2F;Users&#x2F;">
+<meta property="og:description" content="一个小菜鸡的修炼心得与踩坑之路">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T15:21:55.436Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://yoursite.com/archives/2019/11/page/2/">
 
 
 <script id="page-configurations">
@@ -69,13 +67,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
-    isArchive: false
+    isArchive: true
   };
 </script>
 
-  <title>手机API操作 | Lea的博客</title>
+  <title>归档 | Lea的博客</title>
   
 
 
@@ -185,122 +183,52 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          手机API操作
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">嗯..! 目前共计 11 篇日志。 继续努力。</span>
+      </div>
 
       
-        <p>1.获取手机分辨率</p>
-<blockquote>
-<p>driver.get_window_size()</p>
-</blockquote>
-<p>2.手机截图</p>
-<blockquote>
-<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
-<p>参数：</p>
-<p>filename：指定路径下，指定格式的图片</p>
-<p>get_screenshot_as_file(filename)</p>
-<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
-</blockquote>
-<blockquote>
-<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
-</blockquote>
-<p>3.获取和设置手机网络</p>
-<blockquote>
-<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
-<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
-<p>设置手机网络<br>drive.set_network_connection()</p>
-</blockquote>
-<p>4.发送键到设备</p>
-<blockquote>
-<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
-<p>参数：</p>
-<p>Keycode: 发送给设备的关键代码</p>
-<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
-<p>driver.press_keycode(keycode, metastate = none)</p>
-<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
-</blockquote>
-<p>5.操作手机通知栏</p>
-<blockquote>
-<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
-<p>打开通知栏：<br>driver.open_notifications()</p>
-<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
-</blockquote>
-
+    <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/appium/" rel="tag"># appium</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-01T00:23:36+08:00"
+              content="2019-11-01">
+          11-01
+        </time>
+      </div>
 
-        
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/11/01/charles/" itemprop="url">
+            <span itemprop="name">charles</span>
+          </a>
+      </h2>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/18/%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9CAPI/" rel="next" title="元素操作API">
-                  <i class="fa fa-chevron-left"></i> 元素操作API
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/18/%E6%BB%91%E5%8A%A8%E5%92%8C%E6%8B%96%E6%8B%BD%E4%BA%8B%E4%BB%B6/" rel="prev" title="滑动和拖拽事件">
-                  滑动和拖拽事件 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2019/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/11/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>

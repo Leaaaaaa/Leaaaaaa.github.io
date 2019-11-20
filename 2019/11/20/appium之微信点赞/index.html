@@ -50,18 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="1.获取手机分辨率  driver.get_window_size()  2.手机截图  应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题 参数： filename：指定路径下，指定格式的图片 get_screenshot_as_file(filename) 例如：get_screenshot_as_file(“&#x2F;Users&#x2F;">
+  <meta name="description" content="这是一个自动化测试微信朋友圈点赞的简单代码。本来想要给两个动态点赞，无奈太菜，无法定位所有属性都相同的评论元素，只能点出现的第一个评论框。尝试过用绝对路径，但是上下两个评论框的很多父节点都相同，多次尝试无果。查了一些资料也没找到想要的解决方案，只有先留着这个问题以后去解决啦。 下面是实现代码  `from appium import webdriverimport timefrom seleni">
 <meta name="keywords" content="appium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手机API操作">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;18&#x2F;%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C&#x2F;index.html">
+<meta property="og:title" content="appium之微信点赞">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;20&#x2F;appium%E4%B9%8B%E5%BE%AE%E4%BF%A1%E7%82%B9%E8%B5%9E&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="1.获取手机分辨率  driver.get_window_size()  2.手机截图  应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题 参数： filename：指定路径下，指定格式的图片 get_screenshot_as_file(filename) 例如：get_screenshot_as_file(“&#x2F;Users&#x2F;">
+<meta property="og:description" content="这是一个自动化测试微信朋友圈点赞的简单代码。本来想要给两个动态点赞，无奈太菜，无法定位所有属性都相同的评论元素，只能点出现的第一个评论框。尝试过用绝对路径，但是上下两个评论框的很多父节点都相同，多次尝试无果。查了一些资料也没找到想要的解决方案，只有先留着这个问题以后去解决啦。 下面是实现代码  `from appium import webdriverimport timefrom seleni">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T15:21:55.436Z">
+<meta property="og:updated_time" content="2019-11-20T08:34:19.787Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://yoursite.com/2019/11/20/appium%E4%B9%8B%E5%BE%AE%E4%BF%A1%E7%82%B9%E8%B5%9E/">
 
 
 <script id="page-configurations">
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title>手机API操作 | Lea的博客</title>
+  <title>appium之微信点赞 | Lea的博客</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/appium%E4%B9%8B%E5%BE%AE%E4%BF%A1%E7%82%B9%E8%B5%9E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          手机API操作
+          appium之微信点赞
         </h1>
 
         <div class="post-meta">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
+              <time title="创建时间：2019-11-20 00:00:00 / 修改时间：16:34:19" itemprop="dateCreated datePublished" datetime="2019-11-20T00:00:00+08:00">2019-11-20</time>
             </span>
 
           
@@ -228,42 +228,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>1.获取手机分辨率</p>
-<blockquote>
-<p>driver.get_window_size()</p>
-</blockquote>
-<p>2.手机截图</p>
-<blockquote>
-<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
-<p>参数：</p>
-<p>filename：指定路径下，指定格式的图片</p>
-<p>get_screenshot_as_file(filename)</p>
-<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
-</blockquote>
-<blockquote>
-<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
-</blockquote>
-<p>3.获取和设置手机网络</p>
-<blockquote>
-<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
-<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
-<p>设置手机网络<br>drive.set_network_connection()</p>
-</blockquote>
-<p>4.发送键到设备</p>
-<blockquote>
-<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
-<p>参数：</p>
-<p>Keycode: 发送给设备的关键代码</p>
-<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
-<p>driver.press_keycode(keycode, metastate = none)</p>
-<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
-</blockquote>
-<p>5.操作手机通知栏</p>
-<blockquote>
-<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
-<p>打开通知栏：<br>driver.open_notifications()</p>
-<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
-</blockquote>
+        <ul>
+<li>这是一个自动化测试微信朋友圈点赞的简单代码。本来想要给两个动态点赞，无奈太菜，无法定位所有属性都相同的评论元素，只能点出现的第一个评论框。尝试过用绝对路径，但是上下两个评论框的很多父节点都相同，多次尝试无果。查了一些资料也没找到想要的解决方案，只有先留着这个问题以后去解决啦。</li>
+<li>下面是实现代码</li>
+</ul>
+<p>`from appium import webdriver<br>import time<br>from selenium.webdriver.support.wait import WebDriverWait</p>
+<p>desired_caps = dict()<br>desired_caps[‘platformName’] = ‘Android’<br>desired_caps[‘platformVersion’] = ‘6.0.1’<br>desired_caps[‘deviceName’] = ‘test’<br>desired_caps[‘appPackage’] = ‘com.tencent.mm’<br>desired_caps[‘appActivity’] = ‘.ui.LauncherUI’</p>
+<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps)</p>
+<h1 id="打开微信界面"><a href="#打开微信界面" class="headerlink" title="打开微信界面"></a>打开微信界面</h1><h1 id="点击发现-显示等待"><a href="#点击发现-显示等待" class="headerlink" title="点击发现//显示等待"></a>点击发现//显示等待</h1><p>wait = WebDriverWait(driver, 15).until(lambda x: x.find_element_by_xpath(“//*[@text=’发现’]”))<br>wait.click()</p>
+<p>time.sleep(2)</p>
+<h1 id="点击朋友圈"><a href="#点击朋友圈" class="headerlink" title="点击朋友圈"></a>点击朋友圈</h1><p>driver.find_element_by_xpath(“//*[@text=’朋友圈’]”).click()<br>time.sleep(2)</p>
+<h1 id="滑动屏幕"><a href="#滑动屏幕" class="headerlink" title="滑动屏幕"></a>滑动屏幕</h1><p>driver.swipe(866, 1364, 866, 684, 3000)<br>time.sleep(2)</p>
+<h1 id="点击评论按钮"><a href="#点击评论按钮" class="headerlink" title="点击评论按钮"></a>点击评论按钮</h1><p>driver.find_element_by_xpath(“//*[@content-desc=’评论’]”).click()<br>time.sleep(2)</p>
+<p>#点赞<br>driver.find_element_by_xpath(“//*[@text=’赞’]”).click()</p>
+<p>time.sleep(5)</p>
+<p>driver.quit()`</p>
 
     </div>
 
@@ -280,17 +259,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/18/%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9CAPI/" rel="next" title="元素操作API">
-                  <i class="fa fa-chevron-left"></i> 元素操作API
+                <a href="/2019/11/18/uiautomatorviewer%E4%BD%BF%E7%94%A8/" rel="next" title="uiautomatorviewer使用">
+                  <i class="fa fa-chevron-left"></i> uiautomatorviewer使用
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/18/%E6%BB%91%E5%8A%A8%E5%92%8C%E6%8B%96%E6%8B%BD%E4%BA%8B%E4%BB%B6/" rel="prev" title="滑动和拖拽事件">
-                  滑动和拖拽事件 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -329,6 +305,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#打开微信界面"><span class="nav-number">1.</span> <span class="nav-text">打开微信界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击发现-显示等待"><span class="nav-number">2.</span> <span class="nav-text">点击发现//显示等待</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击朋友圈"><span class="nav-number">3.</span> <span class="nav-text">点击朋友圈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动屏幕"><span class="nav-number">4.</span> <span class="nav-text">滑动屏幕</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击评论按钮"><span class="nav-number">5.</span> <span class="nav-text">点击评论按钮</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
