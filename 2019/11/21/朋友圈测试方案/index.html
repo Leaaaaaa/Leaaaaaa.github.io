@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="朋友圈测试方案动态界面 朋友圈界面是否符合设计 朋友圈背景图片是否正确显示  功能 自己的动态  查看权限  发表动态所有人可见，好友是否可见 发表仅自己可见动态，朋友圈是否显示 发表分组可见动态，不在可见组的人是否能看到   查看方式  从朋友圈动态看  显示照片视频文字   从我的相册看  显示照片，视频     动态发布方式  从相册选择  是否能完整访问相册内容   视频类型  拍摄  是">
+<meta name="keywords" content="测试用例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信朋友圈测试用例">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88&#x2F;index.html">
+<meta property="og:site_name" content="Lea的博客">
+<meta property="og:description" content="朋友圈测试方案动态界面 朋友圈界面是否符合设计 朋友圈背景图片是否正确显示  功能 自己的动态  查看权限  发表动态所有人可见，好友是否可见 发表仅自己可见动态，朋友圈是否显示 发表分组可见动态，不在可见组的人是否能看到   查看方式  从朋友圈动态看  显示照片视频文字   从我的相册看  显示照片，视频     动态发布方式  从相册选择  是否能完整访问相册内容   视频类型  拍摄  是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-21T09:09:14.106Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/21/%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>微信朋友圈测试用例 | Lea的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lea的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录成长之路</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微信朋友圈测试用例
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-21 00:00:00 / 修改时间：17:09:14" itemprop="dateCreated datePublished" datetime="2019-11-21T00:00:00+08:00">2019-11-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="朋友圈测试方案"><a href="#朋友圈测试方案" class="headerlink" title="朋友圈测试方案"></a>朋友圈测试方案</h1><h2 id="动态"><a href="#动态" class="headerlink" title="动态"></a>动态</h2><h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><ul>
+<li>朋友圈界面是否符合设计</li>
+<li>朋友圈背景图片是否正确显示</li>
+</ul>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li><p>自己的动态</p>
+<ul>
+<li><p>查看权限</p>
+<ul>
+<li>发表动态所有人可见，好友是否可见</li>
+<li>发表仅自己可见动态，朋友圈是否显示</li>
+<li>发表分组可见动态，不在可见组的人是否能看到</li>
+</ul>
+</li>
+<li><p>查看方式</p>
+<ul>
+<li><p>从朋友圈动态看</p>
+<ul>
+<li>显示照片视频文字</li>
+</ul>
+</li>
+<li><p>从我的相册看</p>
+<ul>
+<li>显示照片，视频</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>动态发布方式</p>
+<ul>
+<li><p>从相册选择</p>
+<ul>
+<li>是否能完整访问相册内容</li>
+</ul>
+</li>
+<li><p>视频类型</p>
+<ul>
+<li><p>拍摄</p>
+<ul>
+<li>是否能正常访问相机功能</li>
+<li>视频是否完整显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>长按</p>
+<ul>
+<li>是否能跳到发表纯文案页面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>无网络下发表动态</p>
+</li>
+<li><p>提醒谁看是否成功</p>
+</li>
+<li><p>所在位置是否正确显示</p>
+</li>
+</ul>
+</li>
+<li><p>动态内容</p>
+<ul>
+<li><p>图片或文案类型</p>
+<ul>
+<li>图片显示是否正确以及图片的最大数量限制</li>
+<li>不同数量的图片排版是否符合预期</li>
+<li>文案字数的最大限制</li>
+<li>文案的特殊字符，表情，链接等是否正确显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>别人的动态</p>
+<ul>
+<li><p>消息提醒</p>
+<ul>
+<li>发现是否有红点</li>
+<li>朋友圈是否有头像</li>
+</ul>
+</li>
+<li><p>用户屏蔽了朋友圈所有提醒，是否屏蔽成功</p>
+</li>
+<li><p>浏览朋友圈过程中有新动态是否有提醒</p>
+</li>
+<li><p>点进动态发布人的头像能否跳转资料页</p>
+</li>
+<li><p>从资料页进入该用户的朋友圈能否看到动态记忆历史动态</p>
+</li>
+<li><p>好友设置动态显示期限是否显示正确</p>
+</li>
+<li><p>屏蔽好友动态后是否显示</p>
+</li>
+<li><p>屏蔽好友动态后是否提醒</p>
+</li>
+<li><p>好友动态删除，是否有动态提醒</p>
+</li>
+<li><p>好友动态已查看，提醒是否消失</p>
+</li>
+<li><p>动态人昵称</p>
+<ul>
+<li>未备注，显示昵称</li>
+<li>备注，显示备注</li>
+<li>是否显示特殊字符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ul>
+<li>短时间内多个好友发表动态</li>
+</ul>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><ul>
+<li>网络延迟，断网是否发表</li>
+<li>一定时间内多次发表动态</li>
+<li>刚发表动态时就删除动态</li>
+</ul>
+<h3 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h3><ul>
+<li>不同手机操作系统</li>
+<li>不同微信版本</li>
+<li>不同语言</li>
+<li>不同分辨率设备</li>
+<li>不同型号的一定设备</li>
+</ul>
+<h2 id="点赞"><a href="#点赞" class="headerlink" title="点赞"></a>点赞</h2><h3 id="界面-1"><a href="#界面-1" class="headerlink" title="界面"></a>界面</h3><ul>
+<li>界面是否简介美观</li>
+<li>是否符合设计</li>
+</ul>
+<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><ul>
+<li><p>点赞人</p>
+<ul>
+<li><p>点赞是否实时显示结果</p>
+</li>
+<li><p>点赞后展示的是不是自己的昵称</p>
+</li>
+<li><p>点赞后是否能取消</p>
+</li>
+<li><p>取消后，重新点赞</p>
+</li>
+<li><p>点赞后，其他共同好友点赞，是否有消息提醒</p>
+</li>
+<li><p>点赞后，非共同好友点赞，是否有消息提醒</p>
+</li>
+<li><p>点击点赞人昵称，是否能跳转到其资料页</p>
+</li>
+<li><p>能否看到其他人的点赞</p>
+<ul>
+<li>共同好友</li>
+<li>非共同好友</li>
+<li>发动态的用户本人点赞</li>
+</ul>
+</li>
+<li><p>从朋友圈动态点赞</p>
+</li>
+<li><p>访问好友相册，对历史动态点赞</p>
+</li>
+<li><p>登录已失效点赞</p>
+</li>
+</ul>
+</li>
+<li><p>被点赞人</p>
+<ul>
+<li><p>自己给自己点赞</p>
+</li>
+<li><p>点赞人昵称</p>
+<ul>
+<li>设置备注的好友，展示备注名</li>
+<li>未设置备注好友，展示用户昵称</li>
+<li>用户昵称含有特殊符号，能够显示</li>
+<li>点赞用户中有相同昵称</li>
+<li>多个好友点赞，换行显示</li>
+</ul>
+</li>
+<li><p>从朋友圈动态页查看</p>
+</li>
+<li><p>从我的相册查看</p>
+</li>
+<li><p>解除好友关系后是否还显示其点赞</p>
+</li>
+<li><p>拉黑后是否显示其点赞</p>
+</li>
+</ul>
+</li>
+<li><p>点赞内容</p>
+<ul>
+<li>图片</li>
+<li>文案</li>
+<li>视频</li>
+<li>链接</li>
+</ul>
+</li>
+<li><p>消息提醒</p>
+<ul>
+<li><p>朋友圈右上角</p>
+<ul>
+<li>多条</li>
+<li>一条</li>
+</ul>
+</li>
+<li><p>点击朋友圈，页面</p>
+</li>
+<li><p>进入朋友圈，顶端显示</p>
+</li>
+<li><p>浏览朋友圈过程中，有人点赞，刷新是否显示消息提醒</p>
+</li>
+<li><p>用户屏蔽了朋友圈消息提醒是否屏蔽成功</p>
+</li>
+<li><p>消息详情列表显示</p>
+</li>
+<li><p>取消点赞后是否提醒</p>
+</li>
+<li><p>先点赞后，查看后又点赞，是否提醒</p>
+</li>
+<li><p>消息未查看，换设备登录</p>
+</li>
+<li><p>消息已查看，换设备登录</p>
+</li>
+</ul>
+</li>
+<li><p>是都有最多点赞人数限制</p>
+</li>
+<li><p>点赞人是否按时间先后排序</p>
+</li>
+</ul>
+<h3 id="并发-1"><a href="#并发-1" class="headerlink" title="并发"></a>并发</h3><ul>
+<li>多个用户同时点赞</li>
+<li>连续多次点赞</li>
+<li>用户点赞未提交成功时，删除动态</li>
+</ul>
+<h3 id="兼容-1"><a href="#兼容-1" class="headerlink" title="兼容"></a>兼容</h3><ul>
+<li>不同手机操作系统</li>
+<li>不同微信版本</li>
+<li>不同语言</li>
+<li>不同分辨率设备</li>
+<li>不同型号的一定设备</li>
+</ul>
+<h3 id="性能-1"><a href="#性能-1" class="headerlink" title="性能"></a>性能</h3><ul>
+<li><p>网络延迟，断网</p>
+<ul>
+<li>响应延迟</li>
+<li>丢包</li>
+</ul>
+</li>
+<li><p>压力测试</p>
+<ul>
+<li>一定时间内多个用户点赞</li>
+</ul>
+</li>
+</ul>
+<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><h3 id="界面是否简介美观"><a href="#界面是否简介美观" class="headerlink" title="界面是否简介美观"></a>界面是否简介美观</h3><h3 id="是否符合设计"><a href="#是否符合设计" class="headerlink" title="是否符合设计"></a>是否符合设计</h3><h3 id="评论人"><a href="#评论人" class="headerlink" title="评论人"></a>评论人</h3><ul>
+<li><p>评论是否实时显示结果</p>
+</li>
+<li><p>评论后展示的是不是自己的昵称</p>
+</li>
+<li><p>评论后是否能取消</p>
+</li>
+<li><p>取消后，重新评论</p>
+</li>
+<li><p>评论后，其他共同好友评论，是否有消息提醒</p>
+</li>
+<li><p>评论后，非共同好友评论，是否有消息提醒</p>
+</li>
+<li><p>点击评论人昵称，是否能跳转到其资料页</p>
+</li>
+<li><p>能否看到其他人的评论</p>
+<ul>
+<li>共同好友</li>
+<li>非共同好友</li>
+<li>发动态的用户本人评论</li>
+</ul>
+</li>
+<li><p>从朋友圈动态评论</p>
+</li>
+<li><p>访问好友相册，对历史动态评论</p>
+</li>
+<li><p>登录已失效评论</p>
+</li>
+</ul>
+<h3 id="被评论人"><a href="#被评论人" class="headerlink" title="被评论人"></a>被评论人</h3><ul>
+<li><p>自己给自己评论</p>
+</li>
+<li><p>评论人昵称</p>
+<ul>
+<li>设置备注的好友，展示备注名</li>
+<li>未设置备注好友，展示用户昵称</li>
+<li>用户昵称含有特殊符号，能够显示</li>
+<li>评论用户中有相同昵称</li>
+</ul>
+</li>
+<li><p>从朋友圈动态页查看</p>
+</li>
+<li><p>从我的相册查看</p>
+</li>
+<li><p>解除好友关系后是否还显示其评论</p>
+</li>
+<li><p>拉黑后是否显示其评论</p>
+</li>
+</ul>
+<h3 id="评论内容"><a href="#评论内容" class="headerlink" title="评论内容"></a>评论内容</h3><ul>
+<li>图片</li>
+<li>文案</li>
+<li>视频</li>
+<li>链接</li>
+</ul>
+<h3 id="消息提醒"><a href="#消息提醒" class="headerlink" title="消息提醒"></a>消息提醒</h3><ul>
+<li><p>朋友圈右上角</p>
+<ul>
+<li>多条</li>
+<li>一条</li>
+</ul>
+</li>
+<li><p>点击朋友圈，页面</p>
+</li>
+<li><p>进入朋友圈，顶端显示</p>
+</li>
+<li><p>浏览朋友圈过程中，有人评论，刷新是否显示消息提醒</p>
+</li>
+<li><p>用户屏蔽了朋友圈消息提醒是否屏蔽成功</p>
+</li>
+<li><p>消息详情列表显示</p>
+</li>
+<li><p>删除评论后是否提醒</p>
+</li>
+<li><p>先删除评论，查看后又评论，是否提醒</p>
+</li>
+<li><p>消息未查看，换设备登录</p>
+</li>
+<li><p>消息已查看，换设备登录</p>
+</li>
+</ul>
+<h3 id="是否有最多评论人数限制"><a href="#是否有最多评论人数限制" class="headerlink" title="是否有最多评论人数限制"></a>是否有最多评论人数限制</h3><h3 id="是否有最多评论字数限制"><a href="#是否有最多评论字数限制" class="headerlink" title="是否有最多评论字数限制"></a>是否有最多评论字数限制</h3><h3 id="评论是否表情、字符、链接等是否正确显示"><a href="#评论是否表情、字符、链接等是否正确显示" class="headerlink" title="评论是否表情、字符、链接等是否正确显示"></a>评论是否表情、字符、链接等是否正确显示</h3><h3 id="评论是否按时间先后排序"><a href="#评论是否按时间先后排序" class="headerlink" title="评论是否按时间先后排序"></a>评论是否按时间先后排序</h3><h3 id="并发-2"><a href="#并发-2" class="headerlink" title="并发"></a>并发</h3><ul>
+<li>多个用户同时评论</li>
+<li>连续多次评论</li>
+<li>用户评论未提交成功时，删除动态</li>
+</ul>
+<h3 id="兼容-2"><a href="#兼容-2" class="headerlink" title="兼容"></a>兼容</h3><ul>
+<li>不同手机操作系统</li>
+<li>不同微信版本</li>
+<li>不同语言</li>
+<li>不同分辨率设备</li>
+<li>不同型号的一定设备</li>
+</ul>
+<h3 id="网络延迟，断网"><a href="#网络延迟，断网" class="headerlink" title="网络延迟，断网"></a>网络延迟，断网</h3><ul>
+<li>响应延迟</li>
+<li>丢包</li>
+</ul>
+<h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><ul>
+<li>一定时间内多个用户评论</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/" rel="tag"># 测试用例</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/20/appium%E4%B9%8B%E5%BE%AE%E4%BF%A1%E7%82%B9%E8%B5%9E/" rel="next" title="appium之微信点赞">
+                  <i class="fa fa-chevron-left"></i> appium之微信点赞
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#朋友圈测试方案"><span class="nav-number">1.</span> <span class="nav-text">朋友圈测试方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态"><span class="nav-number">1.1.</span> <span class="nav-text">动态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面"><span class="nav-number">1.1.1.</span> <span class="nav-text">界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">1.1.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发"><span class="nav-number">1.1.3.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-number">1.1.4.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容"><span class="nav-number">1.1.5.</span> <span class="nav-text">兼容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点赞"><span class="nav-number">1.2.</span> <span class="nav-text">点赞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">兼容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论"><span class="nav-number">1.3.</span> <span class="nav-text">评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面是否简介美观"><span class="nav-number">1.3.1.</span> <span class="nav-text">界面是否简介美观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是否符合设计"><span class="nav-number">1.3.2.</span> <span class="nav-text">是否符合设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论人"><span class="nav-number">1.3.3.</span> <span class="nav-text">评论人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#被评论人"><span class="nav-number">1.3.4.</span> <span class="nav-text">被评论人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论内容"><span class="nav-number">1.3.5.</span> <span class="nav-text">评论内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息提醒"><span class="nav-number">1.3.6.</span> <span class="nav-text">消息提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是否有最多评论人数限制"><span class="nav-number">1.3.7.</span> <span class="nav-text">是否有最多评论人数限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是否有最多评论字数限制"><span class="nav-number">1.3.8.</span> <span class="nav-text">是否有最多评论字数限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论是否表情、字符、链接等是否正确显示"><span class="nav-number">1.3.9.</span> <span class="nav-text">评论是否表情、字符、链接等是否正确显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论是否按时间先后排序"><span class="nav-number">1.3.10.</span> <span class="nav-text">评论是否按时间先后排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发-2"><span class="nav-number">1.3.11.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容-2"><span class="nav-number">1.3.12.</span> <span class="nav-text">兼容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络延迟，断网"><span class="nav-number">1.3.13.</span> <span class="nav-text">网络延迟，断网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压力测试"><span class="nav-number">1.3.14.</span> <span class="nav-text">压力测试</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Lea"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Lea</p>
+  <div class="site-description" itemprop="description">一个小菜鸡的修炼心得与踩坑之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lea</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
