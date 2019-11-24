@@ -188,6 +188,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/24/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">web自动化测试练习</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-24 00:00:00 / 修改时间：23:22:50" itemprop="dateCreated datePublished" datetime="2019-11-24T00:00:00+08:00">2019-11-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>什么样的项目适合Web自动化测试</p>
+<ol>
+<li>需求变动不频繁</li>
+<li>项目周期长</li>
+<li>项目需要回归测试</li>
+</ol>
+<ul>
+<li>基于元素属性</li>
+</ul>
+<blockquote>
+<p>find_element_by_id()<br>find_element_by_name()<br>find_element_by_class_name()</p>
+</blockquote>
+<ul>
+<li>基于元素的标签名称</li>
+</ul>
+<blockquote>
+<p>find_element_by_tag_name()</p>
+</blockquote>
+<ul>
+<li>定位超链接标签</li>
+</ul>
+<blockquote>
+<p>find_element_by_link_text()<br>find_element_by_partial_link_text()</p>
+</blockquote>
+<ul>
+<li>定位一组元素返回的是列表,从0开始</li>
+</ul>
+<blockquote>
+<p>访问必须指定下标，下标从零开始<br>例如：find_elements_by_tag_name(“input”)[1].send_keys(“1111”)</p>
+</blockquote>
+<p>xpath定位 ：driver.find_element_by_xpath()</p>
+<ol>
+<li><p>绝对路径：从最外层元素到指定元素之间所有经过元素层级的路径：绝对路径以/ 开始，中间不能跳跃元素, 使用firebug可以快速生成元素xpath的绝对路径</p>
+</li>
+<li><p>相对路径：从第一个符合条件元素开始（一般配合属性区分）：相对路径以 // 开始，//后面加上标签名称或*（所有标签）,使用friebug扩展插件firepath 可以快速生成元素相对路径</p>
+</li>
+<li><p>利用元素属性性</p>
+<p>说明：快速定位元素，利用元素唯一属性</p>
+<p>示例：//*[@id=‘kw’]</p>
+</li>
+<li><p>层级与属性结合<br>说明：要找的元素没有属性，但是他的父级有<br>示例：//*[@id=‘p1’]/input</p>
+</li>
+<li><p>属性与逻辑结合<br>说明：解决元素之间个相同属性重名问题<br>示例：//*[@id=‘telA’ and @class=‘telA’]</p>
+</li>
+<li><p>xpath扩展</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>//*[text()=“xxx”]  文本内容是xxx的元素</p>
+</li>
+<li><p>//*[starts-with(@attribute,’xxx’)]  属性以xxx开头的元素</p>
+</li>
+<li><p>//*[contains(@attribute,’xxx’)] 属性中含有xxx的元素</p>
+</li>
+</ol>
+</blockquote>
+<p>css定位方法：<br>driver.find_element_by_css_selector()</p>
+<ol>
+<li>Id 选择器：<br>说明：根据元素id属性来选择,必须以#修饰<br>格式：#id 如： #userA &lt;选择id属性值为userA的所有元素&gt;</li>
+<li>class 选择器：<br>说明：根据元素class属性选择<br>格式：.class 如：.telA&lt;选择class属性值为telA的所有元素&gt;</li>
+<li>元素选择器：<br>说明：根据元素的标签名选择<br>格式：element（元素标签名），如：input &lt;选择所有input元素&gt;</li>
+<li>属性选择器：<br>说明：根据元素属性名和值来选择<br>格式：[attribute=value] 如：[type=“password”] &lt;选择所有type属性为password的值&gt;</li>
+<li>层级选择器：<br>说明：根据元素的父子关系来选择<br>格式：element&gt;element 如：p&gt;input &lt;返回所有p元素下所有的input元素&gt;<br>提示：&gt; 可以代替空格 如： p  input  或者<br>p  [type=‘password’]</li>
+<li>Css 延伸</li>
+</ol>
+<blockquote>
+<ol>
+<li>input[type^=‘p’] 说明：type属性以p字母开头的元素</li>
+<li>input[type$=‘d’] 说明：type属性以d字母结束的元素</li>
+<li>input[type*=‘w’] 说明：type属性包含w字母的元素</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -745,100 +876,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">手机API操作</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.获取手机分辨率</p>
-<blockquote>
-<p>driver.get_window_size()</p>
-</blockquote>
-<p>2.手机截图</p>
-<blockquote>
-<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
-<p>参数：</p>
-<p>filename：指定路径下，指定格式的图片</p>
-<p>get_screenshot_as_file(filename)</p>
-<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
-</blockquote>
-<blockquote>
-<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
-</blockquote>
-<p>3.获取和设置手机网络</p>
-<blockquote>
-<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
-<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
-<p>设置手机网络<br>drive.set_network_connection()</p>
-</blockquote>
-<p>4.发送键到设备</p>
-<blockquote>
-<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
-<p>参数：</p>
-<p>Keycode: 发送给设备的关键代码</p>
-<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
-<p>driver.press_keycode(keycode, metastate = none)</p>
-<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
-</blockquote>
-<p>5.操作手机通知栏</p>
-<blockquote>
-<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
-<p>打开通知栏：<br>driver.open_notifications()</p>
-<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/TouchAction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1158,6 +1195,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">手机API操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.获取手机分辨率</p>
+<blockquote>
+<p>driver.get_window_size()</p>
+</blockquote>
+<p>2.手机截图</p>
+<blockquote>
+<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
+<p>参数：</p>
+<p>filename：指定路径下，指定格式的图片</p>
+<p>get_screenshot_as_file(filename)</p>
+<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
+</blockquote>
+<blockquote>
+<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
+</blockquote>
+<p>3.获取和设置手机网络</p>
+<blockquote>
+<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
+<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
+<p>设置手机网络<br>drive.set_network_connection()</p>
+</blockquote>
+<p>4.发送键到设备</p>
+<blockquote>
+<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
+<p>参数：</p>
+<p>Keycode: 发送给设备的关键代码</p>
+<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
+<p>driver.press_keycode(keycode, metastate = none)</p>
+<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
+</blockquote>
+<p>5.操作手机通知栏</p>
+<blockquote>
+<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
+<p>打开通知栏：<br>driver.open_notifications()</p>
+<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/appium1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1339,138 +1470,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/appium0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/16/appium0/" class="post-title-link" itemprop="url">appium</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-16 01:07:06 / 修改时间：01:09:44" itemprop="dateCreated datePublished" datetime="2019-11-16T01:07:06+08:00">2019-11-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>##有关appium的学习笔记<br>###基本信息配置<br><em># 导入appium库</em></p>
-<blockquote>
-<p>from appium import webdriver</p>
-</blockquote>
-<p><em># 创建字典</em></p>
-<blockquote>
-<p>desired_caps= dict()</p>
-</blockquote>
-<p><em># 设备类型</em></p>
-<blockquote>
-<p>desired_caps[‘platformName’] = ‘Android’</p>
-</blockquote>
-<p><em># 设备版本</em></p>
-<blockquote>
-<p>desired_caps[‘platformVersion’] = ‘6.0.1’</p>
-</blockquote>
-<p><em># 安卓随意写，苹果按手机型号写，如iPhone6</em></p>
-<blockquote>
-<p>desired_caps[‘deviceName’] = ‘test’</p>
-</blockquote>
-<p><em># app的包名</em></p>
-<blockquote>
-<p>desired_caps[‘appPackage’] = ‘com.android.settings’</p>
-</blockquote>
-<p><em># app的启动名（界面名</em></p>
-<blockquote>
-<p>desired_caps[‘appActivity’] = ‘.SubSettings’</p>
-</blockquote>
-<p><em># 创建一个driver对象 我们写的Python代码会访问本机的appium服务器，并获取driver对象。appium会将我们的driver对象调用方法转化为post请求，提交给appium服务器。appium通过接受到的post请求发送给手机（虚拟器），再由手机执行</em></p>
-<blockquote>
-<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps）</p>
-</blockquote>
-<ul>
-<li>获取APP启动时间</li>
-</ul>
-<blockquote>
-<p>adb shell am start -W +包名/启动名（打开一个应用程序并返回时间）</p>
-</blockquote>
-<blockquote>
-<p>Thistime：该界面（activity)启动的耗时时间</p>
-</blockquote>
-<blockquote>
-<p>totaltime：应用自身启动耗时=thistime+应用application等待资源启动时间</p>
-</blockquote>
-<blockquote>
-<p>Waittime：系统启动应用耗时=totaltime+系统资源启动时间</p>
-</blockquote>
-<ul>
-<li>如何使用appium打开任意app</li>
-</ul>
-<blockquote>
-<p>1.打开要测试的应用</p>
-</blockquote>
-<blockquote>
-<p>2.使用adb命令获取包名和启动名</p>
-</blockquote>
-<blockquote>
-<p>3.修改desired_caps字典中的appPackage和appActivity的参数</p>
-</blockquote>
-<ul>
-<li>在一个应用内跳转到另一个应用</li>
-</ul>
-<blockquote>
-<p>driver.start_activity(“包名”, “启动名”)</p>
-</blockquote>
-<ul>
-<li>在跳转时，想要输出其包名或启动名,或者想要在报告中展示对应的信息</li>
-</ul>
-<blockquote>
-<p>driver.current_package</p>
-</blockquote>
-<blockquote>
-<p>driver.current_activity</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1521,14 +1520,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -50,17 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="title: Mac使用Charles有关问题date: 2019-11-01tags: Charles Chrmoe–    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书">
+  <meta name="description" content="什么样的项目适合Web自动化测试  需求变动不频繁 项目周期长 项目需要回归测试   基于元素属性   find_element_by_id()find_element_by_name()find_element_by_class_name()   基于元素的标签名称   find_element_by_tag_name()   定位超链接标签   find_element_by_link_tex">
+<meta name="keywords" content="web自动化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="charles">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;charles&#x2F;index.html">
+<meta property="og:title" content="web自动化测试练习">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;24&#x2F;web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="title: Mac使用Charles有关问题date: 2019-11-01tags: Charles Chrmoe–    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书">
+<meta property="og:description" content="什么样的项目适合Web自动化测试  需求变动不频繁 项目周期长 项目需要回归测试   基于元素属性   find_element_by_id()find_element_by_name()find_element_by_class_name()   基于元素的标签名称   find_element_by_tag_name()   定位超链接标签   find_element_by_link_tex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T17:12:28.912Z">
+<meta property="og:updated_time" content="2019-11-24T15:22:50.404Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/01/charles/">
+<link rel="canonical" href="http://yoursite.com/2019/11/24/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
 
 
 <script id="page-configurations">
@@ -74,7 +75,7 @@
   };
 </script>
 
-  <title>charles | Lea的博客</title>
+  <title>web自动化测试练习 | Lea的博客</title>
   
 
 
@@ -189,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/charles/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          charles
+          web自动化测试练习
         </h1>
 
         <div class="post-meta">
@@ -211,16 +212,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-01 00:23:36" itemprop="dateCreated datePublished" datetime="2019-11-01T00:23:36+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-24 00:00:00 / 修改时间：23:22:50" itemprop="dateCreated datePublished" datetime="2019-11-24T00:00:00+08:00">2019-11-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-16 01:12:28" itemprop="dateModified" datetime="2019-11-16T01:12:28+08:00">2019-11-16</time>
-              </span>
 
           
 
@@ -233,8 +228,79 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <hr>
-<p>title: Mac使用Charles有关问题<br>date: 2019-11-01<br>tags: Charles Chrmoe<br>–<br>    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。<br>    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书问题，于是我按照教程去下载安装安装证书。但是问题出现了，我点击install Charles root certificate的时候，弹出了钥匙串，但是里面没有Charles的证书，也就无法进行信任授权。多次尝试和搜索也不知道为什么里面没有那个证书。最后成功的办法是点击save Charles root certificate，保存到电脑中，再把那个证书拖进钥匙串里，就可以信任授权啦。<br>    后来我又遇到一个和Charles有关的问题。我在Chrome里面下载了一个switchyOmega插件，然后在Charles运行时选择Charles代理，进行Chrome上的抓包工作。但是后来我发现我的Chrome无法连接服务器了.百度上说是代理的问题，然后发现关闭了Charles之后，应该把Chrome里面的代理换回原来的系统代理，然后Chrome就可以正常运行了。</p>
+        <p>什么样的项目适合Web自动化测试</p>
+<ol>
+<li>需求变动不频繁</li>
+<li>项目周期长</li>
+<li>项目需要回归测试</li>
+</ol>
+<ul>
+<li>基于元素属性</li>
+</ul>
+<blockquote>
+<p>find_element_by_id()<br>find_element_by_name()<br>find_element_by_class_name()</p>
+</blockquote>
+<ul>
+<li>基于元素的标签名称</li>
+</ul>
+<blockquote>
+<p>find_element_by_tag_name()</p>
+</blockquote>
+<ul>
+<li>定位超链接标签</li>
+</ul>
+<blockquote>
+<p>find_element_by_link_text()<br>find_element_by_partial_link_text()</p>
+</blockquote>
+<ul>
+<li>定位一组元素返回的是列表,从0开始</li>
+</ul>
+<blockquote>
+<p>访问必须指定下标，下标从零开始<br>例如：find_elements_by_tag_name(“input”)[1].send_keys(“1111”)</p>
+</blockquote>
+<p>xpath定位 ：driver.find_element_by_xpath()</p>
+<ol>
+<li><p>绝对路径：从最外层元素到指定元素之间所有经过元素层级的路径：绝对路径以/ 开始，中间不能跳跃元素, 使用firebug可以快速生成元素xpath的绝对路径</p>
+</li>
+<li><p>相对路径：从第一个符合条件元素开始（一般配合属性区分）：相对路径以 // 开始，//后面加上标签名称或*（所有标签）,使用friebug扩展插件firepath 可以快速生成元素相对路径</p>
+</li>
+<li><p>利用元素属性性</p>
+<p>说明：快速定位元素，利用元素唯一属性</p>
+<p>示例：//*[@id=‘kw’]</p>
+</li>
+<li><p>层级与属性结合<br>说明：要找的元素没有属性，但是他的父级有<br>示例：//*[@id=‘p1’]/input</p>
+</li>
+<li><p>属性与逻辑结合<br>说明：解决元素之间个相同属性重名问题<br>示例：//*[@id=‘telA’ and @class=‘telA’]</p>
+</li>
+<li><p>xpath扩展</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>//*[text()=“xxx”]  文本内容是xxx的元素</p>
+</li>
+<li><p>//*[starts-with(@attribute,’xxx’)]  属性以xxx开头的元素</p>
+</li>
+<li><p>//*[contains(@attribute,’xxx’)] 属性中含有xxx的元素</p>
+</li>
+</ol>
+</blockquote>
+<p>css定位方法：<br>driver.find_element_by_css_selector()</p>
+<ol>
+<li>Id 选择器：<br>说明：根据元素id属性来选择,必须以#修饰<br>格式：#id 如： #userA &lt;选择id属性值为userA的所有元素&gt;</li>
+<li>class 选择器：<br>说明：根据元素class属性选择<br>格式：.class 如：.telA&lt;选择class属性值为telA的所有元素&gt;</li>
+<li>元素选择器：<br>说明：根据元素的标签名选择<br>格式：element（元素标签名），如：input &lt;选择所有input元素&gt;</li>
+<li>属性选择器：<br>说明：根据元素属性名和值来选择<br>格式：[attribute=value] 如：[type=“password”] &lt;选择所有type属性为password的值&gt;</li>
+<li>层级选择器：<br>说明：根据元素的父子关系来选择<br>格式：element&gt;element 如：p&gt;input &lt;返回所有p元素下所有的input元素&gt;<br>提示：&gt; 可以代替空格 如： p  input  或者<br>p  [type=‘password’]</li>
+<li>Css 延伸</li>
+</ol>
+<blockquote>
+<ol>
+<li>input[type^=‘p’] 说明：type属性以p字母开头的元素</li>
+<li>input[type$=‘d’] 说明：type属性以d字母结束的元素</li>
+<li>input[type*=‘w’] 说明：type属性包含w字母的元素</li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -243,19 +309,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag"># web自动化</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/21/%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/" rel="next" title="微信朋友圈测试用例">
+                  <i class="fa fa-chevron-left"></i> 微信朋友圈测试用例
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/16/adb/" rel="prev" title="adb命令">
-                  adb命令 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>

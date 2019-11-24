@@ -50,17 +50,16 @@
   };
 </script>
 
-  <meta name="description" content="title: Mac使用Charles有关问题date: 2019-11-01tags: Charles Chrmoe–    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书">
-<meta property="og:type" content="article">
-<meta property="og:title" content="charles">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;charles&#x2F;index.html">
+  <meta name="description" content="一个小菜鸡的修炼心得与踩坑之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lea的博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;web%E8%87%AA%E5%8A%A8%E5%8C%96&#x2F;index.html">
 <meta property="og:site_name" content="Lea的博客">
-<meta property="og:description" content="title: Mac使用Charles有关问题date: 2019-11-01tags: Charles Chrmoe–    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书">
+<meta property="og:description" content="一个小菜鸡的修炼心得与踩坑之路">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T17:12:28.912Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/01/charles/">
+<link rel="canonical" href="http://yoursite.com/tags/web%E8%87%AA%E5%8A%A8%E5%8C%96/">
 
 
 <script id="page-configurations">
@@ -68,13 +67,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>charles | Lea的博客</title>
+  <title>标签: web自动化 | Lea的博客</title>
   
 
 
@@ -184,88 +183,50 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/charles/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          charles
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h1 class="collection-header">web自动化
+          <small>标签</small>
         </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-01 00:23:36" itemprop="dateCreated datePublished" datetime="2019-11-01T00:23:36+08:00">2019-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-16 01:12:28" itemprop="dateModified" datetime="2019-11-16T01:12:28+08:00">2019-11-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-        <hr>
-<p>title: Mac使用Charles有关问题<br>date: 2019-11-01<br>tags: Charles Chrmoe<br>–<br>    在前几天，我开始尝试学习各种测试以及抓包工具。在使用Charles时，遇到一些问题，于是想要记录下来。<br>    首先是关于证书问题。当我在Mac上安装好了Charles并且相关代理配置好了以后，我发现我的Safari因为安全问题不能连接服务器而打不开网页了。然后发现是证书问题，于是我按照教程去下载安装安装证书。但是问题出现了，我点击install Charles root certificate的时候，弹出了钥匙串，但是里面没有Charles的证书，也就无法进行信任授权。多次尝试和搜索也不知道为什么里面没有那个证书。最后成功的办法是点击save Charles root certificate，保存到电脑中，再把那个证书拖进钥匙串里，就可以信任授权啦。<br>    后来我又遇到一个和Charles有关的问题。我在Chrome里面下载了一个switchyOmega插件，然后在Charles运行时选择Charles代理，进行Chrome上的抓包工作。但是后来我发现我的Chrome无法连接服务器了.百度上说是代理的问题，然后发现关闭了Charles之后，应该把Chrome里面的代理换回原来的系统代理，然后Chrome就可以正常运行了。</p>
-
+    <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-24T00:00:00+08:00"
+              content="2019-11-24">
+          11-24
+        </time>
+      </div>
 
-        
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/11/24/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" itemprop="url">
+            <span itemprop="name">web自动化测试练习</span>
+          </a>
+      </h2>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/16/adb/" rel="prev" title="adb命令">
-                  adb命令 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+
 
 
           </div>

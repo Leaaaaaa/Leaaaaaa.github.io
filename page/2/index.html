@@ -188,6 +188,138 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/appium0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/16/appium0/" class="post-title-link" itemprop="url">appium</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-16 01:07:06 / 修改时间：01:09:44" itemprop="dateCreated datePublished" datetime="2019-11-16T01:07:06+08:00">2019-11-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>##有关appium的学习笔记<br>###基本信息配置<br><em># 导入appium库</em></p>
+<blockquote>
+<p>from appium import webdriver</p>
+</blockquote>
+<p><em># 创建字典</em></p>
+<blockquote>
+<p>desired_caps= dict()</p>
+</blockquote>
+<p><em># 设备类型</em></p>
+<blockquote>
+<p>desired_caps[‘platformName’] = ‘Android’</p>
+</blockquote>
+<p><em># 设备版本</em></p>
+<blockquote>
+<p>desired_caps[‘platformVersion’] = ‘6.0.1’</p>
+</blockquote>
+<p><em># 安卓随意写，苹果按手机型号写，如iPhone6</em></p>
+<blockquote>
+<p>desired_caps[‘deviceName’] = ‘test’</p>
+</blockquote>
+<p><em># app的包名</em></p>
+<blockquote>
+<p>desired_caps[‘appPackage’] = ‘com.android.settings’</p>
+</blockquote>
+<p><em># app的启动名（界面名</em></p>
+<blockquote>
+<p>desired_caps[‘appActivity’] = ‘.SubSettings’</p>
+</blockquote>
+<p><em># 创建一个driver对象 我们写的Python代码会访问本机的appium服务器，并获取driver对象。appium会将我们的driver对象调用方法转化为post请求，提交给appium服务器。appium通过接受到的post请求发送给手机（虚拟器），再由手机执行</em></p>
+<blockquote>
+<p>driver = webdriver.Remote(‘<a href="http://localhost:4723/wd/hub&#39;" target="_blank" rel="noopener">http://localhost:4723/wd/hub&#39;</a>, desired_caps）</p>
+</blockquote>
+<ul>
+<li>获取APP启动时间</li>
+</ul>
+<blockquote>
+<p>adb shell am start -W +包名/启动名（打开一个应用程序并返回时间）</p>
+</blockquote>
+<blockquote>
+<p>Thistime：该界面（activity)启动的耗时时间</p>
+</blockquote>
+<blockquote>
+<p>totaltime：应用自身启动耗时=thistime+应用application等待资源启动时间</p>
+</blockquote>
+<blockquote>
+<p>Waittime：系统启动应用耗时=totaltime+系统资源启动时间</p>
+</blockquote>
+<ul>
+<li>如何使用appium打开任意app</li>
+</ul>
+<blockquote>
+<p>1.打开要测试的应用</p>
+</blockquote>
+<blockquote>
+<p>2.使用adb命令获取包名和启动名</p>
+</blockquote>
+<blockquote>
+<p>3.修改desired_caps字典中的appPackage和appActivity的参数</p>
+</blockquote>
+<ul>
+<li>在一个应用内跳转到另一个应用</li>
+</ul>
+<blockquote>
+<p>driver.start_activity(“包名”, “启动名”)</p>
+</blockquote>
+<ul>
+<li>在跳转时，想要输出其包名或启动名,或者想要在报告中展示对应的信息</li>
+</ul>
+<blockquote>
+<p>driver.current_package</p>
+</blockquote>
+<blockquote>
+<p>driver.current_activity</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/adb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -392,14 +524,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
