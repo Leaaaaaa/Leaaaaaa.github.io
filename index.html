@@ -319,6 +319,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/%E5%A4%A9%E6%B6%AF%E7%BD%91%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/24/%E5%A4%A9%E6%B6%AF%E7%BD%91%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">天涯网简单测试</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-24 00:00:00 / 修改时间：23:27:05" itemprop="dateCreated datePublished" datetime="2019-11-24T00:00:00+08:00">2019-11-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>from selenium import webdriver<br>import time</p>
+<p><em># 实例化浏览器</em></p>
+<p>driver = webdriver.Chrome()</p>
+<p><em># 打开项目URL</em></p>
+<p>driver.get(‘<a href="https://bbs.tianya.cn/&#39;" target="_blank" rel="noopener">https://bbs.tianya.cn/&#39;</a>)</p>
+<p><em># 点击登录</em></p>
+<p>driver.find_element_by_id(‘js_login’).click()</p>
+<p><em># 点击账号密码登录</em></p>
+<p>driver.find_element_by_class_name(“normal-login-tab”).click()</p>
+<p><em># 输入账号</em></p>
+<p>driver.find_element_by_id(“vwriter”).send_keys(“LeaLaaa”)</p>
+<p><em># 输入密码</em></p>
+<p>driver.find_element_by_id(“vpassword”).send_keys(“liudaiyao520”)</p>
+<p><em># 点击登录</em><br>driver.find_element_by_class_name(“loginWin-submit-btn”).click()</p>
+<p>time.sleep(5)</p>
+<p><em># 点击头像进入主页</em></p>
+<p>driver.find_element_by_class_name(“logo”).click()</p>
+<p><em># 点击随机框进入随机发表编写</em></p>
+<p>driver.find_element_by_xpath(“//<br>div[@class=’initText’]”).click()<br>time.sleep(5)</p>
+<p><em># 写随机标题</em></p>
+<p>driver.find_element_by_css_selector(“#suiji_title”).send_keys(“这是一个测试”)</p>
+<p>time.sleep(5)</p>
+<p><em># 写随机内容</em></p>
+<p>driver.find_element_by_xpath(“//textarea[@id=’suiji_text’]”).send_keys(“this is my first web autotest”)<br>time.sleep(5)<br><em># 点击发表</em></p>
+<p>driver.find_element_by_xpath(“//input[@class=’submit’]”).click()</p>
+<p>time.sleep(5)</p>
+<p>driver.quit()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -876,6 +961,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lea">
+      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lea的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">手机API操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.获取手机分辨率</p>
+<blockquote>
+<p>driver.get_window_size()</p>
+</blockquote>
+<p>2.手机截图</p>
+<blockquote>
+<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
+<p>参数：</p>
+<p>filename：指定路径下，指定格式的图片</p>
+<p>get_screenshot_as_file(filename)</p>
+<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
+</blockquote>
+<blockquote>
+<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
+</blockquote>
+<p>3.获取和设置手机网络</p>
+<blockquote>
+<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
+<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
+<p>设置手机网络<br>drive.set_network_connection()</p>
+</blockquote>
+<p>4.发送键到设备</p>
+<blockquote>
+<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
+<p>参数：</p>
+<p>Keycode: 发送给设备的关键代码</p>
+<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
+<p>driver.press_keycode(keycode, metastate = none)</p>
+<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
+</blockquote>
+<p>5.操作手机通知栏</p>
+<blockquote>
+<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
+<p>打开通知栏：<br>driver.open_notifications()</p>
+<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/TouchAction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1195,183 +1374,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/18/%E6%89%8B%E6%9C%BAAPI%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">手机API操作</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-18 00:00:00 / 修改时间：23:21:55" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">2019-11-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.获取手机分辨率</p>
-<blockquote>
-<p>driver.get_window_size()</p>
-</blockquote>
-<p>2.手机截图</p>
-<blockquote>
-<p>应用场景：有些自动化操作可能没有反应，但不会报错。此时我们可以将操作过后的关键情况，截图留存，后期也可以根据图片发现问题</p>
-<p>参数：</p>
-<p>filename：指定路径下，指定格式的图片</p>
-<p>get_screenshot_as_file(filename)</p>
-<p>例如：get_screenshot_as_file(“/Users/mac/desktop/screnn.png”)</p>
-</blockquote>
-<blockquote>
-<p><em>#若没有路径，只有名字，则默认保存到当前目录</em></p>
-</blockquote>
-<p>3.获取和设置手机网络</p>
-<blockquote>
-<p>应用场景：用流量时会有提示，不用流量时没有提示</p>
-<p>获取手机网络：<br>driver.network_connection<br> <em>#print(driver.network_connection)</em></p>
-<p>设置手机网络<br>drive.set_network_connection()</p>
-</blockquote>
-<p>4.发送键到设备</p>
-<blockquote>
-<p>应用场景：比如很多应用有按两次返回键退出应用的功能</p>
-<p>参数：</p>
-<p>Keycode: 发送给设备的关键代码</p>
-<p>metastate: 关于被发送的关键代码的原信息，一般为默认值</p>
-<p>driver.press_keycode(keycode, metastate = none)</p>
-<p> <em>#按键对应的编码，可以在百度搜索关键字”android keycode“</em></p>
-</blockquote>
-<p>5.操作手机通知栏</p>
-<blockquote>
-<p>应用场景：测试通信类软件时，如果A给B发送一条消息，B的通知栏肯定会显示对应的消息，通过手机通知栏操作判断B是否收到消息</p>
-<p>打开通知栏：<br>driver.open_notifications()</p>
-<p>关闭通知栏：<br>1.滑动<br>2.点击返回键</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/appium1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lea">
-      <meta itemprop="description" content="一个小菜鸡的修炼心得与踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lea的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/17/appium1/" class="post-title-link" itemprop="url">appium1</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-17 00:00:00 / 修改时间：23:59:00" itemprop="dateCreated datePublished" datetime="2019-11-17T00:00:00+08:00">2019-11-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>#APP操作<br>如何通过代码关闭app和驱动对象<br>Driver.close_app（关闭当前应用程序，不会关闭驱动对象）<br>Driver.quit（关闭驱动对象，同时关闭驱动对象所关联的app）</p>
-<p>判断app是否已经安装<br>driver.is_app_installed(“io.manong.developerdaily”)(安装路径）<br>安装app<br>driver.insta_app(app_path）<br>卸载<br>driver.remove_app(“io.manong.developerdaily”)</p>
-<p>将应用置于后台<br>进入后台5每秒钟，自动回到前台，模拟热启动<br>driver.background_app(5) 单位是秒</p>
-<hr>
-<p>#元素操作</p>
-<ul>
-<li><p>通过id定位一个元素<br>参数：id_value:元素的resource-id属性值<br>返回值：定位到的单个元素<br>driver.find_element_by_id(id_value)</p>
-</li>
-<li><p>通过class_name定位一个元素<br>参数：class_value:元素的class属性值<br>返回值：定位到的单个元素<br>driver.find_element_by_class_name(class_value)</p>
-</li>
-<li><p>通过xpath定位一个元素<br>参数：xpath_value:定位一个原色的xpath表达式<br>返回值：定位到的单个元素<br>driver.find_element_by_xpath(xpath_value)</p>
-</li>
-</ul>
-<p>注意：应该用元素的唯一特征区定位。当有相同的id/class时，定位到的是第一个</p>
-<p>定位一组元素：批量的获取相同特征的元素，使用定位一组元素更加方便</p>
-<ul>
-<li><p>通过id定位一组元素<br>参数：id_value:元素的resource-id属性值<br>返回值：定位到的单个元素<br>driver.find_elements_by_id(id_value)</p>
-</li>
-<li><p>通过class_name定位一组元素<br>参数：class_value:元素的class属性值<br>返回值：定位到的单个元素<br>driver.find_elements_by_class_name(class_value)</p>
-</li>
-<li><p>通过xpath定位一组元素<br>参数：xpath_value:定位一个原色的xpath表达式<br>返回值：定位到的单个元素<br>driver.find_elements_by_xpath(xpath_value)</p>
-</li>
-</ul>
-<p>定位元素的注意点：<br>1.driver.find_element_by_id(id_value) 若没有参数或参数错误，会报错找不到元素</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/%E5%85%83%E7%B4%A0%E7%AD%89%E5%BE%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1520,7 +1522,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
